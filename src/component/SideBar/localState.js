@@ -2,7 +2,7 @@ export default {
     screens: [
         {
             id: 1,
-            name: "5_inch",
+            name: "5 inch",
             url:
                 "https://i.etsystatic.com/31742724/r/il/76eb46/3342797102/il_1588xN.3342797102_5lqu.jpg",
             tooltipTxt: "haircut, combing, colouring",
@@ -10,7 +10,7 @@ export default {
         },
         {
             id: 2,
-            name: "7_inch",
+            name: "7 inch",
             url:
                 "https://i.etsystatic.com/31742724/r/il/76eb46/3342797102/il_1588xN.3342797102_5lqu.jpg",
             tooltipTxt: "combing, colouring, waving",
@@ -18,7 +18,7 @@ export default {
         },
         {
             id: 3,
-            name: "10_inch",
+            name: "10 inch",
             url:
                 "https://i.etsystatic.com/31742724/r/il/76eb46/3342797102/il_1588xN.3342797102_5lqu.jpg",
             tooltipTxt: "waving, and straightening hair ",

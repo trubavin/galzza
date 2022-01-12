@@ -95,7 +95,7 @@ export default function Model(props) {
   return (
     <group position={[0,0,0]} ref={allGroup} {...props} dispose={null}>
       <group position={[0,0,0]} ref={model}>
-        {screen === "7_inch" &&
+        {screen === "7 inch" &&
         <>
           <group position={[5.01, -3.64, 0.19]} scale={[28.32, 28.28, 8.46]}>
             <mesh geometry={nodes['front7inch-nagar'].geometry}
@@ -122,7 +122,7 @@ export default function Model(props) {
           </mesh>
         </>
         }
-        {screen === "5_inch" &&
+        {screen === "5 inch" &&
         <>
           <group position={[5.79, -1.74, 0.2]}>
             <mesh geometry={nodes['front5inch-nagar'].geometry}

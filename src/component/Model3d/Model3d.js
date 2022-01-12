@@ -49,13 +49,6 @@ const Model3d = () => {
     }
 
 
-
-
-    useEffect(()=>{
-        
-    },[])
-
-
      return (
         <>
             <ControlButtons
