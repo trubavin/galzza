@@ -46,15 +46,16 @@ export default function Model(props) {
   useFrame((state) => {
     const t = state.clock.getElapsedTime()
     if (!isPlayMode) allGroup.current.position.y = (10*Math.sin(t / 2.5)) / 10
+
     if (isCameraReset) camera.position.lerp(vec.set(46, 0, 70), 0.1)
-    if (tl_model.current || tl_cover.current) {
-      if (tl_model.current.isActive() || tl_cover.current.isActive()){
-        setStopOtherTween(true)
-      } else {
-        setStopOtherTween(false)
+      if (tl_model.current || tl_cover.current) {
+        if (tl_model.current.isActive() || tl_cover.current.isActive()){
+          setStopOtherTween(true)
+        } else {
+          setStopOtherTween(false)
+        }
       }
-    }
-  })
+    })
 
   const logo = useTexture('./tex/logo_for_3d.jpg')
   logo.flipY = "true"

@@ -76,7 +76,7 @@ const Model3d = () => {
 
                 <Suspense fallback={ <Loader /> }>
                     {screen != "10inch" &&
-                        <Galzza
+                      <Galzza
                             screen={screen}
                             color={color}
                             design={design}
@@ -114,8 +114,8 @@ const Model3d = () => {
                 <OrbitControls
                   enablePan={false}
                   autoRotate={isPlayMode}
-                  minPolarAngle={Math.PI / 2}
-                  maxPolarAngle={Math.PI / 2.2}
+                  // minPolarAngle={Math.PI / 2}
+                  // maxPolarAngle={Math.PI / 2.2}
                   minDistance={60}
                   maxDistance={120}
                 />

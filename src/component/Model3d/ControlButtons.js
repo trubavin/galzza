@@ -13,7 +13,7 @@ const ControlButtons = ({isCoverClosed, closeCover, isPlayMode, changeMode, init
                   display: 'flex',
                   justifyContent: 'center',
                   position: 'absolute',
-                  zIndex: 99991,
+                  zIndex: 9,
                   background: "#e5e5e5",
                   width: '65%',
                   overflow: 'hidden'

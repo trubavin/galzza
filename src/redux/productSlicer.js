@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit'
 import localState from "../component/SideBar/localState";
 
-const { screens, colors, designs } = localState
+const { screens, colors, designs, videos } = localState
 
 const  initScreen= () => {
     if (localStorage.getItem("screen")) {
@@ -30,12 +30,22 @@ const  initDesign = () => {
     }
 }
 
+const  initVideo = () => {
+    if (localStorage.getItem("video")) {
+        return videos[JSON.parse(localStorage.getItem("video"))].url
+    } else {
+        localStorage.setItem("video", '0')
+        return videos[0].url
+    }
+}
+
 export const productSlice = createSlice({
     name: 'product',
     initialState: {
         screen: initScreen(),
         color: initColor(),
         design: initDesign(),
+        video: initVideo(),
         activeStep: localStorage.getItem("step") ? Number(localStorage.getItem("step")) : 0,
         // timeForSlideshow: 60,
         // time: Date.now(),
@@ -57,13 +67,18 @@ export const productSlice = createSlice({
             return {...state, design: designs[action.payload].url}
         },
 
+        updateVideo: (state, action) => {
+          return {...state, video: videos[action.payload].url}
+        },
+
         updateActiveStep: (state, action) => {
+
           return {...state, activeStep: action.payload}
         },
     },
 })
 
-export const {updateScreen, updateColor, updateDesign, updateActiveStep } = productSlice.actions
+export const {updateScreen, updateColor, updateDesign, updateVideo, updateActiveStep } = productSlice.actions
 
 export default productSlice.reducer
 

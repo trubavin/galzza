@@ -12,12 +12,13 @@ import localState from "./localState";
 import CircularProgress from "@mui/material/CircularProgress";
 import {useDispatch, useSelector} from "react-redux";
 import {updateActiveStep} from "../../redux/productSlicer";
+import Videos from "./Videos/Videos";
 
 
 const steps = ['Screen', 'Color', 'Design', 'Video']
 
 
-const {screens, colors, designs} = localState;
+const {screens, colors, designs, videos} = localState;
 
 function _renderStepContent(step, handleChange) {
     switch (step) {
@@ -27,6 +28,8 @@ function _renderStepContent(step, handleChange) {
             return <Colors colors={colors} handleChange={handleChange}/>
         case 2:
             return <Designs designs={designs} handleChange={handleChange}/>
+        case 3:
+          return <Videos videos={videos} handleChange={handleChange}/>
         default:
             return <div>Not Found</div>
     }
@@ -103,18 +106,6 @@ const LeftSideBar = () => {
                                                 Back
                                             </Button>
                                         )}
-                                    <div className="">
-                                      screen
-                                      {
-                                        localStorage.getItem("screen") ? screens[localStorage.getItem("screen")].name : screens[0].name
-                                      }
-                                    </div>
-                                    <div className="">
-                                      color
-                                      {
-                                        localStorage.getItem("color") ? colors[localStorage.getItem("color")].name : colors[0].name
-                                      }
-                                    </div>
                                     <div className={classes.wrapper}>
                                         <Button
                                             disabled={isSubmitting}

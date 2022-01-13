@@ -109,5 +109,34 @@ export default {
                 "https://lh3.googleusercontent.com/sjRhsVuQJiwbeHX0vMqgt9Rh01ERa2EcqSKpKdAqkGQgJGUESgDeSWi2bDhNRrcm7PpZQMoCn6zgXuN1A6AA=s400",
             category: "for him"
         },
+    ],
+    videos: [
+      {
+        id: 0,
+        name: "free",
+        url: {
+          url_preview: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Jivi16GNHm9JrY7izEXOkdGJqi9ym8X4Byg_CBRTcAexcmWPhXFW6WEOiHoGI9H0yFc&usqp=CAU",
+          url_video: "-"
+        },
+        category: "happy birthday"
+      },
+      {
+        id: 1,
+        name: "happy birthday",
+        url: {
+          url_preview: "https://hunterae.com/wp-content/uploads/images/happy-birthday-wishes-download-videohive-33022701-free-hunterae-com.jpg",
+          url_video: "-"
+        },
+        category: "happy birthday"
+      },
+      {
+        id: 1,
+        name: "happy birthday",
+        url: {
+          url_preview: "https://hunterae.com/wp-content/uploads/images/happy-birthday-wishes-download-videohive-33022701-free-hunterae-com.jpg",
+          url_video: "+"
+        },
+        category: "happy birthday"
+      },
     ]
 }
