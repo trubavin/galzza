@@ -46,6 +46,7 @@ export const productSlice = createSlice({
         color: initColor(),
         design: initDesign(),
         video: initVideo(),
+        ready_play: 'false',
         activeStep: localStorage.getItem("step") ? Number(localStorage.getItem("step")) : 0,
         // timeForSlideshow: 60,
         // time: Date.now(),
@@ -72,13 +73,17 @@ export const productSlice = createSlice({
         },
 
         updateActiveStep: (state, action) => {
-
           return {...state, activeStep: action.payload}
+        },
+
+        updateReady_play: (state, action) => {
+          console.log('slicer ready_play',  action.payload)
+          return {...state, ready_play: action.payload}
         },
     },
 })
 
-export const {updateScreen, updateColor, updateDesign, updateVideo, updateActiveStep } = productSlice.actions
+export const {updateScreen, updateColor, updateDesign, updateVideo, updateActiveStep, updateReady_play } = productSlice.actions
 
 export default productSlice.reducer
 

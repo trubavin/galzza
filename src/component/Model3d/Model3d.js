@@ -26,6 +26,8 @@ const Model3d = () => {
     const screen = useSelector((state) => state.product.screen)
     const color = useSelector((state) => state.product.color)
     const design = useSelector((state) => state.product.design)
+    const video_src = useSelector((state) => state.product.video)
+    const ready_play = useSelector((state) => state.product.ready_play)
 
     const tl_model = useRef()
     const tl_cover = useRef()
@@ -80,6 +82,8 @@ const Model3d = () => {
                             screen={screen}
                             color={color}
                             design={design}
+                            video_src={video_src}
+                            ready_play={ready_play}
                             isCoverClosed={isCoverClosed}
                             isPlayMode={isPlayMode}
                             isCameraReset={isCameraReset}
@@ -96,26 +100,11 @@ const Model3d = () => {
                 {/*<Environment preset="city" />*/}
                 </Suspense>
                 <ContactShadows rotation-x={Math.PI / 2} position={[0, -15, 0]} opacity={0.5} width={200} height={200} blur={1} far={200} />
-                {/*<OrbitControls*/}
-                {/*    //autoRotate*/}
-                {/*    // enableDamping={true}*/}
-                {/*    // dampingFactor={0.25}*/}
-                {/*    // rotateSpeed={0.4}*/}
-                {/*    // keyPanSpeed={0.4}*/}
-                {/*    // screenSpacePanning={true}*/}
-                {/*    // zoomSpeed={0.6}*/}
-                {/*    // enablePan={true}*/}
-                {/*    // panSpeed={2.4}*/}
-                {/*    // minPolarAngle={Math.PI / 6}*/}
-                {/*    // maxPolarAngle={Math.PI /1.5}*/}
-                {/*    // minDistance={60}*/}
-                {/*    // maxDistance={180}*/}
-                {/*/>*/}
                 <OrbitControls
                   enablePan={false}
                   autoRotate={isPlayMode}
                   // minPolarAngle={Math.PI / 2}
-                  // maxPolarAngle={Math.PI / 2.2}
+                  maxPolarAngle={Math.PI / 2}
                   minDistance={60}
                   maxDistance={120}
                 />

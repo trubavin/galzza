@@ -7,14 +7,18 @@ import { gsap, Linear } from 'gsap'
 
 export default function Model(props) {
 
-  const {screen, color, design, isCoverClosed, isPlayMode, isCameraReset, tl_model, tl_cover, setStopOtherTween ,isTweening} = props
+  const {screen, color, design, ready_play, video_src, isCoverClosed, isPlayMode, isCameraReset, tl_model, tl_cover, setStopOtherTween} = props
   const allGroup = useRef()
   const model = useRef()
   const cover = useRef()
   const vec = new THREE.Vector3()
   const camera = useThree((state) => state.camera)
-
   const {nodes, materials} = useGLTF('/galzza.glb')
+  const [video] = useState(() => Object.assign(document.createElement('video'), { src:video_src.url_video, crossOrigin: 'Anonymous', loop: true }))
+
+  useEffect(() => void (ready_play && video.play()), [ready_play, video])
+
+
 
   useEffect(()=>{
 
@@ -105,8 +109,22 @@ export default function Model(props) {
               <meshStandardMaterial map={texture}/>
             </mesh>
           </group>
-          <mesh scale={[1, 1.5, 1]} geometry={nodes.screen.geometry} material={materials.screen}
-                position={[7.77, 4.54, -0.23]}/>
+          {/**** video screen ***/}
+          <mesh scale={[1, 1.5, 1]} geometry={nodes.screen.geometry} position={[7.77, 4.54, -0.23]}>
+            <meshStandardMaterial toneMapped={false}>
+              <videoTexture
+                attach="map"
+                args={[video]}
+                flipY={false}
+                // repeat={[5, 9]}
+                // offset={[-0.1, 0]}
+                // wrapT={THREE.RepeatWrapping}
+                // wrapS={THREE.RepeatWrapping}
+                encoding={THREE.sRGBEncoding}
+                />
+            </meshStandardMaterial>
+          </mesh>
+
           <group position={[9.04, -4.37, 0.12]}>
             <mesh geometry={nodes['buttons-button'].geometry} material={nodes['buttons-button'].material}>
               <meshStandardMaterial map={texture}/>

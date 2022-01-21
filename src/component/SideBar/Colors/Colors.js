@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import classNames from "classnames";
 import Grid from "@mui/material/Grid";
 import ButtonBase from "@mui/material/ButtonBase";
-import {withStyles} from "@mui/styles";
 import {Typography} from "@mui/material";
 import {useDispatch} from "react-redux";
 import {updateColor} from "../../../redux/productSlicer";
@@ -92,4 +91,4 @@ const Colors = ({ colors, handleChange }) => {
             </Grid>
     );
 };
-export default withStyles(styles)(Colors);
+export default Colors;

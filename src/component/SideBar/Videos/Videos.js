@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import Grid from "@mui/material/Grid";
 import ButtonBase from "@mui/material/ButtonBase";
-import {withStyles} from "@mui/styles";
 import {Typography} from "@mui/material";
 import {Field} from "formik";
-import {updateVideo} from "../../../redux/productSlicer";
+import {updateReady_play, updateVideo} from "../../../redux/productSlicer";
 import {useDispatch} from "react-redux";
 import styles from "./videostyles";
 import VideoPlayer from "./VideoPlayer/VideoPlayer";
@@ -23,16 +22,20 @@ const Videos = ({  videos, handleChange }) => {
             : 0
     );
 
-    const [open, setOpen] = useState(false)
-    const handleModalOpen = () => setOpen(true)
-    const handleModalClose = () => setOpen(false)
 
     const dispatch = useDispatch()
     const handleChecked = (i) => (e) => {
         localStorage.setItem("video", i);
         setChecked(i);
         dispatch(updateVideo(i))
+        setReadyOff()
     };
+    const setReady = () => {
+      dispatch(updateReady_play('true'))
+    }
+    const setReadyOff = () => {
+      dispatch(updateReady_play('false'))
+    }
 
     const itemOuterClass = (i) =>
         classNames({
@@ -108,15 +111,10 @@ const Videos = ({  videos, handleChange }) => {
                                         width: '70px',
                                         height: '70px',
                                         }}
-                                        onClick={handleModalOpen}
+                                        onClick={setReady}
                                       />
                                     </div>
-                                    <VideoPlayer
-                                    video={video}
-                                    open={open}
-                                    handleModalClose={handleModalClose}
 
-                                    />
                                     </>
                                   }
                                 </div>
@@ -134,4 +132,4 @@ const Videos = ({  videos, handleChange }) => {
             </Grid>
     );
 };
-export default withStyles(styles)(Videos);
+export default Videos;

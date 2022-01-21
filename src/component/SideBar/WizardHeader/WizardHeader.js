@@ -1,7 +1,6 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import ButtonBase from "@mui/material/ButtonBase";
-import { withStyles } from '@mui/styles';
 import style from './WizardHeaderStyle'
 
 const WizardHeader = ({
@@ -35,4 +34,4 @@ const WizardHeader = ({
         </Grid>
     );
 };
-export default withStyles(style)(WizardHeader);
+export default WizardHeader;

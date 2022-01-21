@@ -28,11 +28,11 @@ const Designs = ({  designs, handleChange }) => {
             [classes.mainClass]: true,
             [classes.checked]: checked === i
         });
-    // const labelClass = (i) =>
-    //     classNames({
-    //         [classes.mainLblClass]: true,
-    //         [classes.LblChecked]: checked === i
-    //     });
+    const labelClass = (i) =>
+        classNames({
+            [classes.mainLblClass]: true,
+            [classes.LblChecked]: checked === i
+        });
     return (
             <Grid
                 container
@@ -95,4 +95,4 @@ const Designs = ({  designs, handleChange }) => {
             </Grid>
     );
 };
-export default withStyles(styles)(Designs);
+export default Designs;

@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import classNames from "classnames";
 import Grid from "@mui/material/Grid";
 import ButtonBase from "@mui/material/ButtonBase";
-import {withStyles} from "@mui/styles";
 import {Typography} from "@mui/material";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
@@ -104,4 +103,4 @@ const Screens = ({ screens, handleChange }) => {
             </>
     );
 };
-export default withStyles(styles)(Screens);
+export default Screens;

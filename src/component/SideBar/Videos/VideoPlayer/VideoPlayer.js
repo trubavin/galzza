@@ -7,7 +7,7 @@ import DialogActions from "@mui/material/DialogActions";
 import Button from "@mui/material/Button";
 
 const VideoPlayer = ({open, handleModalClose, video}) =>{
-  console.log(video)
+
   return (
     <>
       <Dialog

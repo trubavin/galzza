@@ -125,7 +125,7 @@ export default {
         name: "happy birthday",
         url: {
           url_preview: "https://hunterae.com/wp-content/uploads/images/happy-birthday-wishes-download-videohive-33022701-free-hunterae-com.jpg",
-          url_video: "-"
+          url_video: "/video.mp4"
         },
         category: "happy birthday"
       },
@@ -134,7 +134,7 @@ export default {
         name: "happy birthday",
         url: {
           url_preview: "https://hunterae.com/wp-content/uploads/images/happy-birthday-wishes-download-videohive-33022701-free-hunterae-com.jpg",
-          url_video: "+"
+          url_video: "/video2.mp4"
         },
         category: "happy birthday"
       },

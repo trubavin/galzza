@@ -15,7 +15,7 @@ import {updateActiveStep} from "../../redux/productSlicer";
 import Videos from "./Videos/Videos";
 
 
-const steps = ['Screen', 'Color', 'Design', 'Video']
+
 
 
 const {screens, colors, designs, videos} = localState;
@@ -36,10 +36,14 @@ function _renderStepContent(step, handleChange) {
 }
 
 const LeftSideBar = () => {
+    const steps = ['Screen', 'Color', 'Design', 'Video']
     const classes = useStyles()
     const activeStep = useSelector((state) => state.product.activeStep)
     const dispatch = useDispatch()
-    const isLastStep = activeStep === steps.length - 1
+    const allSteps = ()=> {
+        return steps.length
+    }
+    const isLastStep = activeStep === allSteps() - 1
 
 
     function _sleep(ms) {
@@ -80,7 +84,7 @@ const LeftSideBar = () => {
 
     return (
         <>
-            {activeStep === steps.length ? (
+            {activeStep === allSteps() ? (
                 <Success/>
             ) : (
                 <Paper style={{width: '90%', margin: "10px auto", height: 'calc(100% - 80px)'}} elevation={6}
